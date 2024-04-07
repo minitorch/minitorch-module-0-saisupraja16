@@ -44,15 +44,11 @@ def sigmoid(x: float) -> float:
 def relu(x: float) -> float:
     return max(0, x)
 
-
-
 EPS = 1e-6
-
 
 def log(x: float) -> float:
     "$f(x) = log(x)$"
     return math.log(x + EPS)
-
 
 def exp(x: float) -> float:
     "$f(x) = e^{x}$"
@@ -74,23 +70,18 @@ def relu_back(x: float, d: float) -> float:
 
 # Small practice library of elementary higher-order functions.
 
-
 def map(fn: Callable[[float], float]) -> Callable[[Iterable[float]], Iterable[float]]:
     def apply_map(ls: Iterable[float]) -> Iterable[float]:
         return [fn(x) for x in ls]
     return apply_map
 
-
-
 def negList(ls: Iterable[float]) -> Iterable[float]:
     return map(neg)(ls)
-
 
 def zipWith(fn: Callable[[float, float], float]) -> Callable[[Iterable[float], Iterable[float]], Iterable[float]]:
     def apply_zipWith(ls1: Iterable[float], ls2: Iterable[float]) -> Iterable[float]:
         return [fn(x, y) for x, y in zip(ls1, ls2)]
     return apply_zipWith
-
 
 def addLists(ls1: Iterable[float], ls2: Iterable[float]) -> Iterable[float]:
     return zipWith(add)(ls1, ls2)
