@@ -27,6 +27,7 @@ from minitorch.operators import (
 
 from .strategies import assert_close, small_floats
 
+
 # ## Task 0.1 Basic hypothesis tests.
 
 
@@ -115,13 +116,11 @@ def test_sigmoid(a: float) -> None:
     assert sigmoid(a - 1) <= sigmoid(a), "Sigmoid should be non-decreasing"
 
 
-
 @pytest.mark.task0_2
 @given(small_floats, small_floats, small_floats)
 def test_transitive(a: float, b: float, c: float) -> None:
     if lt(a, b) and lt(b, c):
         assert lt(a, c), "Transitive property of less-than failed"
-
 
 
 @pytest.mark.task0_2
@@ -135,12 +134,12 @@ def test_symmetric(a: float, b: float) -> None:
 def test_distribute(x: float, y: float, z: float) -> None:
     assert_close(mul(z, add(x, y)), add(mul(z, x), mul(z, y)))
 
+
 @pytest.mark.task0_2
 @given(small_floats, small_floats, small_floats)
 def test_other(a: float, b: float, c: float) -> None:
     # Testing the associative property of addition
     assert_close(add(add(a, b), c), add(a, add(b, c)))
-
 
 
 # ## Task 0.3  - Higher-order functions
@@ -164,7 +163,6 @@ def test_zip_with(a: float, b: float, c: float, d: float) -> None:
     lists(small_floats, min_size=5, max_size=5),
 )
 def test_sum_distribute(ls1: List[float], ls2: List[float]) -> None:
-
     sum_ls1 = sum(ls1)
     sum_ls2 = sum(ls2)
     combined_sum = sum_ls1 + sum_ls2
@@ -172,7 +170,6 @@ def test_sum_distribute(ls1: List[float], ls2: List[float]) -> None:
     sum_each_element = sum(addLists(ls1, ls2))
 
     assert_close(combined_sum, sum_each_element)
-
 
 
 @pytest.mark.task0_3
