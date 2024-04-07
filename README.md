@@ -6,3 +6,7 @@
 * Docs: https://minitorch.github.io/
 
 * Overview: https://minitorch.github.io/module0.html
+
+![screenshot 1](https://github.com/minitorch/minitorch-module-0-saisupraja16/blob/master/screenshot%201.png)
+
+![screenshot 2](https://github.com/minitorch/minitorch-module-0-saisupraja16/blob/master/screenshot%202.png)
